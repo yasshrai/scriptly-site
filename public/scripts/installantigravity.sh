@@ -2,7 +2,7 @@
 
 set -e
 
-URL="https://edgedl.me.gvt1.com/edgedl/release2/j0qc3/antigravity/stable/1.23.2-4781536860569600/linux-x64/Antigravity.tar.gz"
+URL="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.0.6-5413878570549248/linux-x64/Antigravity.tar.gz"
 TMP_FILE="/tmp/Antigravity.tar.gz"
 INSTALL_DIR="/opt/Antigravity"
 DESKTOP_DIR="/usr/share/applications"
