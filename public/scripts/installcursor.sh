@@ -2,7 +2,7 @@
 
 set -e
 
-URL="https://api2.cursor.sh/updates/download/golden/linux-x64-deb/cursor/3.5"
+URL="https://api2.cursor.sh/updates/download/golden/linux-x64/cursor/3.6"
 INSTALL_DIR="/opt/cursor"
 INSTALL_FILE="$INSTALL_DIR/Cursor.appimage"
 DESKTOP_DIR="/usr/share/applications"
@@ -15,12 +15,12 @@ echo -e "\e[32m==>\e[0m Starting Cursor installation..."
 
 # Must run as root
 if [[ $EUID -ne 0 ]]; then
-   echo -e "\e[33m==>\e[0m Please run with sudo."
-   exit 1
+    echo -e "\e[33m==>\e[0m Please run with sudo."
+    exit 1
 fi
 
 # Check required tools
-if ! command -v curl &> /dev/null; then
+if ! command -v curl &>/dev/null; then
     echo -e "\e[33m==>\e[0m curl is required but not installed."
     exit 1
 fi
@@ -38,7 +38,7 @@ echo -e "\e[32m==>\e[0m Ensuring applications directory exists..."
 mkdir -p "$DESKTOP_DIR"
 
 echo -e "\e[32m==>\e[0m Creating desktop file..."
-cat << 'EOF' > "$DESKTOP_DIR/cursor.desktop"
+cat <<'EOF' >"$DESKTOP_DIR/cursor.desktop"
 [Desktop Entry]
 Name=Cursor
 Exec=/opt/cursor/Cursor.appimage
