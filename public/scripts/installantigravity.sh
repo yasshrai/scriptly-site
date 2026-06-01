@@ -2,7 +2,7 @@
 
 set -e
 
-URL="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.0.6-5413878570549248/linux-x64/Antigravity.tar.gz"
+URL="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.0.10-5119448496078848/linux-x64/Antigravity.tar.gz"
 TMP_FILE="/tmp/Antigravity.tar.gz"
 INSTALL_DIR="/opt/Antigravity"
 DESKTOP_DIR="/usr/share/applications"
@@ -14,13 +14,13 @@ echo -e "\e[32m==>\e[0m Starting Antigravity installation..."
 
 # Must run as root
 if [[ $EUID -ne 0 ]]; then
-   echo -e "\e[33m==>\e[0m Please run with sudo."
-   exit 1
+    echo -e "\e[33m==>\e[0m Please run with sudo."
+    exit 1
 fi
 
 # Check required tools
 for cmd in curl tar; do
-    if ! command -v $cmd &> /dev/null; then
+    if ! command -v $cmd &>/dev/null; then
         echo -e "\e[33m==>\e[0m $cmd is required but not installed."
         exit 1
     fi
@@ -39,7 +39,7 @@ echo -e "\e[32m==>\e[0m Ensuring applications directory exists..."
 mkdir -p "$DESKTOP_DIR"
 
 echo -e "\e[32m==>\e[0m Creating desktop file..."
-cat << 'EOF' > "$DESKTOP_DIR/antigravity.desktop"
+cat <<'EOF' >"$DESKTOP_DIR/antigravity.desktop"
 [Desktop Entry]
 Name=Antigravity
 Comment=Code Editing. Redefined.
@@ -54,3 +54,4 @@ echo -e "\e[32m==>\e[0m Cleaning up..."
 rm -f "$TMP_FILE"
 
 echo -e "\e[32m==>\e[0m Antigravity installed successfully."
+
