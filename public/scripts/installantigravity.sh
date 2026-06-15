@@ -2,7 +2,7 @@
 
 set -e
 
-URL="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.0.10-5119448496078848/linux-x64/Antigravity.tar.gz"
+URL="https://storage.googleapis.com/antigravity-public/antigravity-hub/2.1.4-6481382726303744/linux-x64/Antigravity.tar.gz"
 TMP_FILE="/tmp/Antigravity.tar.gz"
 INSTALL_DIR="/opt/Antigravity"
 DESKTOP_DIR="/usr/share/applications"
@@ -54,4 +54,3 @@ echo -e "\e[32m==>\e[0m Cleaning up..."
 rm -f "$TMP_FILE"
 
 echo -e "\e[32m==>\e[0m Antigravity installed successfully."
-
