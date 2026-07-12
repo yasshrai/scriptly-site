@@ -2,7 +2,7 @@
 
 set -e
 
-URL="https://api2.cursor.sh/updates/download/golden/linux-x64/cursor/3.8"
+URL="https://api2.cursor.sh/updates/download/golden/linux-x64/cursor/3.11"
 INSTALL_DIR="/opt/cursor"
 INSTALL_FILE="$INSTALL_DIR/Cursor.appimage"
 DESKTOP_DIR="/usr/share/applications"
