@@ -14,13 +14,13 @@ echo -e "\e[32m==>\e[0m Starting Android Studio  installation..."
 
 # Must run as root
 if [[ $EUID -ne 0 ]]; then
-   echo -e "\e[33m==>\e[0m Please run with sudo."
-   exit 1
+    echo -e "\e[33m==>\e[0m Please run with sudo."
+    exit 1
 fi
 
 # Check required tools
 for cmd in curl tar; do
-    if ! command -v $cmd &> /dev/null; then
+    if ! command -v $cmd &>/dev/null; then
         echo -e "\e[33m==>\e[0m $cmd is required but not installed."
         exit 1
     fi
@@ -39,7 +39,7 @@ echo -e "\e[32m==>\e[0m Ensuring applications directory exists..."
 mkdir -p "$DESKTOP_DIR"
 
 echo -e "\e[32m==>\e[0m Creating desktop file..."
-cat << 'EOF' > "$DESKTOP_DIR/androidstudio.desktop"
+cat <<'EOF' >"$DESKTOP_DIR/androidstudio.desktop"
 [Desktop Entry]
 Name=androidstudio
 Comment=Code Editing. Redefined.
@@ -54,4 +54,3 @@ echo -e "\e[32m==>\e[0m Cleaning up..."
 rm -f "$TMP_FILE"
 
 echo -e "\e[32m==>\e[0m Android Studio installed successfully."
-

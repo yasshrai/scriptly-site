@@ -4,7 +4,7 @@ import { VscMegaphone } from "react-icons/vsc";
 // UPDATE THIS CONFIGURATION TO ANNOUNCE NEW RELEASES
 export const RELEASE_CONFIG = {
   isVisible: true,
-  text: "🚀 cursor 3.11 is now live in Scriptly! Install it today.",
+  text: "🚀 cursor 3.13 and antigravity is now live in Scriptly! Install it today.",
   link: "/install",
 };
 

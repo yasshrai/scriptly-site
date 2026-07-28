@@ -14,13 +14,13 @@ echo -e "\e[32m==>\e[0m Starting Windsurf installation..."
 
 # Must run as root
 if [[ $EUID -ne 0 ]]; then
-   echo -e "\e[33m==>\e[0m Please run with sudo."
-   exit 1
+    echo -e "\e[33m==>\e[0m Please run with sudo."
+    exit 1
 fi
 
 # Check required tools
 for cmd in curl tar; do
-    if ! command -v $cmd &> /dev/null; then
+    if ! command -v $cmd &>/dev/null; then
         echo -e "\e[33m==>\e[0m $cmd is required but not installed."
         exit 1
     fi
@@ -39,7 +39,7 @@ echo -e "\e[32m==>\e[0m Ensuring applications directory exists..."
 mkdir -p "$DESKTOP_DIR"
 
 echo -e "\e[32m==>\e[0m Creating desktop file..."
-cat << 'EOF' > "$DESKTOP_DIR/windsurf.desktop"
+cat <<'EOF' >"$DESKTOP_DIR/windsurf.desktop"
 [Desktop Entry]
 Name=windsurf
 Comment=Code Editing. Redefined.
